@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2020년 10월 15일 일기 알림</title>
+  <script type="text/javascript">
+    function mo_chk(){
+
+      var os;
+
+      var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
+
+      if (mobile) {
+        var userAgent = navigator.userAgent.toLowerCase();
+        if (userAgent.search("android") > -1){
+          return os = "android";
+        }else if ((userAgent.search("iphone") > -1) || (userAgent.search("ipod") > -1) || (userAgent.search("ipad") > -1)){
+          return os = "ios";
+        }else{
+          return os = "otehr";
+        }
+
+      } else {
+        return os = "pc";
+      }
+    }
+
+    function action_app(){
+      const url = "jwjapps://jwjapps"
+      const ios_appstore_url = "https://apps.apple.com/kr/app/%EC%98%88%EC%88%98%EB%8F%99%ED%96%89%EC%9D%BC%EA%B8%B0/id530081055"
+      const result_mo_chk = mo_chk()
+
+      if(result_mo_chk!="pc"){
+        if(result_mo_chk == "ios"){
+
+          setTimeout( function() {
+            window.open(ios_appstore_url);
+          }, 1500);
+
+          location.href = url;
+        }else{
+          location.href = url;
+        }
+      }
+    }
+
+    action_app()
+  </script>
+</head>
+<body>
+  <span onclick="action_app()">
+            예수동행일기 실행
+  </span>
+</body>
+</html>
