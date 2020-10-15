@@ -5,6 +5,7 @@
   <meta property="og:title" content="띵동! 동행일기 알리미 입니다"/>
   <meta property="og:image" content="https://againsee.github.io/20201015/wwj.png"/>
   <meta property="og:description" content="링크를 눌러 영성일기 앱에 접속하세요~">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
   <title>2020년 10월 15일 일기 알림</title>
   <script type="text/javascript">
     function mo_chk(){
@@ -47,9 +48,13 @@
       }
     }
 
+    function kakao_close() {
+      location.href = "kakaotalk://inappbrowser/close";
+    }
     action_app()
   </script>
 </head>
 <body>
+  <a href="javascript:kakao_close();">창 닫기</a>
 </body>
 </html>
